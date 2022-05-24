@@ -7,6 +7,7 @@ const addBtn = document.getElementById("liveToastBtn"); // ekle butonu
 const removeTodo = document.querySelector("deleteIcon");
 const errToast = document.querySelector('#errorToast');
 const successToast = document.querySelector('#successToast');
+const delToast = document.querySelector('#delToast');
 
 
 
@@ -108,6 +109,7 @@ function deleteTodo(e) {
     if (e.target.className === "fas fa-trash-alt") {
         e.target.parentElement.parentElement.remove();
         deleteTodoFromStorage(e.target.parentElement.parentElement.textContent);
+        $('#delToast').toast('show');
     }
 }
 
